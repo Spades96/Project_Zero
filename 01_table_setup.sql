@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS listings (
 	listing_id INT PRIMARY KEY,
 	category VARCHAR(100) NOT NULL,
-	user_id INT UNIQUE NOT NULL,
+	user_id INT NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
