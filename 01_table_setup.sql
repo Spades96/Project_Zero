@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
 	first_name VARCHAR(100) NOT NULL,
 	last_name VARCHAR(100) NOT NULL,
 	university_id INT NOT NULL,
+    review_count INT DEFAULT 0,
 	FOREIGN KEY (university_id) REFERENCES universities(university_id)
 );
 
@@ -22,6 +23,7 @@ CREATE TABLE IF NOT EXISTS listings (
 CREATE TABLE IF NOT EXISTS products (
 	product_id INT PRIMARY KEY,	
 	product_price INT NOT NULL,
+    product_price_history INT,
 	listing_id INT NOT NULL,
 	FOREIGN KEY (listing_id) REFERENCES listings(listing_id)
 );
