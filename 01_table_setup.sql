@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS orders (
 
 CREATE TABLE IF NOT EXISTS reviews (
 	review_id INT PRIMARY KEY,
+	rating INT NOT NULL CHECK (rating >= 1 AND rating <= 5),
 	review_text VARCHAR(500) NOT NULL,
 	user_id INT NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES users(user_id)
