@@ -26,7 +26,9 @@ CREATE TABLE IF NOT EXISTS listings (
 CREATE TABLE IF NOT EXISTS orders (
 	order_id INT PRIMARY KEY,
 	user_id INT NOT NULL,
-	FOREIGN KEY (user_id) REFERENCES users(user_id)
+    listing_id INT NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (listing_id) REFERENCES listings(listing_id)
 );
 
 CREATE TABLE IF NOT EXISTS reviews (
