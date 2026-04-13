@@ -30,7 +30,7 @@ FROM listings l
 ORDER BY l.item_price DESC;
 
 --print the listings(name, category, price) that are above $100
-SELECT CONCAT(l.item_name, ' (', l.category, ') - $', l.item_price)
+SELECT CONCAT(l.item_name, ' (', l.category, ') - $', l.item_price) AS listings
 FROM listings l
 WHERE l.item_price > 100;
 
