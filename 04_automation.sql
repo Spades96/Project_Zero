@@ -58,7 +58,7 @@ CREATE TRIGGER tr_after_review_insert
 		END//
         DELIMITER ;
 
-        -- This procedure keeps track if an order is places for a user that exist
+        -- This procedure keeps track if an order is placed for a user that exist
         DELIMITER //
         CREATE PROCEDURE place_order(IN p_user_id INT, IN p_order_id INT, IN p_listing_id INT)
         BEGIN
