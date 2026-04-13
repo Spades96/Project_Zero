@@ -22,7 +22,6 @@ CREATE TABLE IF NOT EXISTS listings (
 	category VARCHAR(100) NOT NULL,
     item_name VARCHAR(100) NOT NULL,
 	item_price INT NOT NULL,
-    item_price_history INT,
 	user_id INT NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

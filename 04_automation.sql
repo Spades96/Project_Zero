@@ -33,10 +33,9 @@ CREATE TRIGGER tr_after_review_insert
         AFTER UPDATE ON listings
         FOR EACH ROW
         BEGIN
-            IF(OLD.item_price != NEW.item_price) THEN
-                UPDATE listings
-                SET item_price_history = OLD.item_price
-                WHERE listing_id = OLD.listing_id;
+            IF (OLD.item_price != NEW.item_price) THEN
+                INSERT INTO price_history (old_price, new_price, change_date, listing_id)
+                VALUES (OLD.item_price, NEW.item_price, NOW(), OLD.listing_id);
             END IF;
         END //
     DELIMITER ;
